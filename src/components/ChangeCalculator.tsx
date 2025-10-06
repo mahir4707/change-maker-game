@@ -17,8 +17,8 @@ export const ChangeCalculator = () => {
   const [score, setScore] = useState(0);
 
   const handleCalculate = () => {
-    const price = parseFloat(itemPrice) * 100; // Convert to cents
-    const paid = parseFloat(amountPaid) * 100;
+    const price = parseFloat(itemPrice);
+    const paid = parseFloat(amountPaid);
 
     if (isNaN(price) || isNaN(paid)) {
       toast.error("Please enter valid amounts");
@@ -30,7 +30,7 @@ export const ChangeCalculator = () => {
       return;
     }
 
-    const changeNeeded = Math.round(paid - price);
+    const changeNeeded = paid - price;
     
     if (changeNeeded === 0) {
       toast.success("Exact amount! No change needed.");
@@ -55,7 +55,7 @@ export const ChangeCalculator = () => {
   };
 
   const changeAmount = amountPaid && itemPrice 
-    ? Math.round((parseFloat(amountPaid) - parseFloat(itemPrice)) * 100)
+    ? parseFloat(amountPaid) - parseFloat(itemPrice)
     : 0;
 
   const customerMessage = !isCalculated 
@@ -94,13 +94,13 @@ export const ChangeCalculator = () => {
               
               <div className="space-y-4">
                 <div>
-                  <Label htmlFor="itemPrice">Item Price ($)</Label>
+                  <Label htmlFor="itemPrice">Item Price (₹)</Label>
                   <Input
                     id="itemPrice"
                     type="number"
-                    step="0.01"
+                    step="1"
                     min="0"
-                    placeholder="0.00"
+                    placeholder="0"
                     value={itemPrice}
                     onChange={(e) => setItemPrice(e.target.value)}
                     className="text-lg"
@@ -108,13 +108,13 @@ export const ChangeCalculator = () => {
                 </div>
 
                 <div>
-                  <Label htmlFor="amountPaid">Amount Paid ($)</Label>
+                  <Label htmlFor="amountPaid">Amount Paid (₹)</Label>
                   <Input
                     id="amountPaid"
                     type="number"
-                    step="0.01"
+                    step="1"
                     min="0"
-                    placeholder="0.00"
+                    placeholder="0"
                     value={amountPaid}
                     onChange={(e) => setAmountPaid(e.target.value)}
                     className="text-lg"
