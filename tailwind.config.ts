@@ -47,16 +47,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        counter: {
-          DEFAULT: "hsl(var(--counter))",
-          dark: "hsl(var(--counter-dark))",
+        mint: {
+          DEFAULT: "hsl(var(--mint))",
+          light: "hsl(var(--mint-light))",
         },
-        coin: {
-          gold: "hsl(var(--coin-gold))",
-          silver: "hsl(var(--coin-silver))",
-        },
-        bill: {
-          green: "hsl(var(--bill-green))",
+        cream: "hsl(var(--cream))",
+        gold: {
+          DEFAULT: "hsl(var(--gold))",
+          light: "hsl(var(--gold-light))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -70,13 +68,14 @@ export default {
         },
       },
       backgroundImage: {
-        'gradient-shop': 'var(--gradient-shop)',
-        'gradient-counter': 'var(--gradient-counter)',
+        'gradient-header': 'var(--gradient-header)',
+        'gradient-card': 'var(--gradient-card)',
         'gradient-coin': 'var(--gradient-coin)',
-        'gradient-bill': 'var(--gradient-bill)',
+        'gradient-result': 'var(--gradient-result)',
       },
       boxShadow: {
-        'counter': 'var(--shadow-counter)',
+        'card': 'var(--shadow-card)',
+        'result': 'var(--shadow-result)',
         'coin': 'var(--shadow-coin)',
       },
       borderRadius: {

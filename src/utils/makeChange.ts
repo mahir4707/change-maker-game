@@ -6,6 +6,7 @@ export interface CoinCount {
 
 // Indian Rupee denominations
 export const DENOMINATIONS = [
+  { value: 10, label: '₹10', type: 'coin' as const },
   { value: 5, label: '₹5', type: 'coin' as const },
   { value: 2, label: '₹2', type: 'coin' as const },
   { value: 1, label: '₹1', type: 'coin' as const },
